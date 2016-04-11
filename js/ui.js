@@ -5,14 +5,19 @@ var ui = (function() {
 
     params
       object with props:
-        sortableSelector: jquery selector string of sortable list
-        connectionSelector: selector for connecting lists
+        sortableSelector: jquery selector string of sortable lists
+        connectionSelector: class selector for connecting lists
   */
 
-  var init = function(config) {
-    $( config.sortableSelector ).sortable({
-      connectWith: config.connectionSelector
+
+  var markeSortable = function(sortableSelector, connectionSelector)  {
+    $( sortableSelector ).sortable({
+      connectWith: connectionSelector
       }).disableSelection();
+  }
+
+  var init = function(config) {
+    markeSortable(config.sortableSelector, config.connectionSelector);
     };
 
   return {

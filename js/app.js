@@ -8,12 +8,17 @@ $(function() {
 
 /*
 
-initialize the UI
-  make lists sortable and connected
+UI module
 
-to do object:
-  heading
-  input new item
-  list group
+  initialize the UI
+    params: lists, connection class
+    make lists sortable and connected
 
+  add an item
+
+  delete an item
+
+  cross an item off
+
+  clear completed
 */
