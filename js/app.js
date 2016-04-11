@@ -1,13 +1,19 @@
-var ui = (function() {
-  var init = function() {
-    $( "#today, #week" ).sortable({
-      connectWith: ".connectedSortable"
-      }).disableSelection();
-    };
+$(function() {
+  ui.init({
+    sortableSelector: "#today, #week",
+    connectionSelector: ".connectedSortable"
+  });
+});
 
-  return {
-    init: init
-  }
- })();
 
-$(ui.init);
+/*
+
+initialize the UI
+  make lists sortable and connected
+
+to do object:
+  heading
+  input new item
+  list group
+
+*/
