@@ -3,6 +3,7 @@ $(function() {
     sortableSelector: '#today, #week',
     connectionSelector: '.connectedSortable'
   });
+  c.init();
 });
 
 
