@@ -1,6 +1,8 @@
-var model = {
-  todayIds: ['1', '2'],
-  thisWeekIds: ['3', '4'],
+var m = {
+  lists: {
+    today: ['1', '2'],
+    week: ['3', '4']
+  }
   items: {
     '1': {
       text: 'Create clever sample to do\'s',
