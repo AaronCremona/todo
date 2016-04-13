@@ -1,5 +1,5 @@
 var model = {
-  todayIds: ['1', '2'].
+  todayIds: ['1', '2'],
   thisWeekIds: ['3', '4'],
   items: {
     '1': {
