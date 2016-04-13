@@ -4,6 +4,7 @@ var v = (function() {
 
   /*
       makeSortable function - private
+      - need to add drop on empty ok and placeholder style
   */
 
   var markeSortable = function(sortableSelector, connectionSelector)  {
