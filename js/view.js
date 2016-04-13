@@ -39,11 +39,11 @@ var v = (function() {
         targetEl - selector of element to add todo
         id - id to add to the todo item
   */
-  
-  var renderTodoItem = function(text, targetEl, id) {
+
+  var renderTodoItem = function(targetEl, text, id) {
     var todoEl = todoItemTemplate.replace(/%text%/, text).replace(/%id%/, id);
     $( targetEl ).append(todoEl);
-  }
+  };
 
   return {
     init: init,

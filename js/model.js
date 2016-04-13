@@ -9,26 +9,22 @@ var m = {
       items: ['3', '4']
     }
   ],
-  items: [
-    {
-      id: '1',
+  todos: {
+    '1': {
       text: 'Create clever sample to do\'s',
       isComplete: false
     },
-    {
-      id: '2',
+    '2': {
       text: 'Throw tennis ball for dog',
       isComplete: false
     },
-    {
-      id: '3',
+    '3': {
       text: 'Buy milk',
       isComplete: false
     },
-    {
-      id: '4',
+    '4': {
       text: 'Make plans to takeover the world',
       isComplete: false
     }
-  ]
+  }
 }
