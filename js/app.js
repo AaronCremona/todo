@@ -1,5 +1,5 @@
 $(function() {
-  ui.init({
+  v.init({
     sortableSelector: "#today, #week",
     connectionSelector: ".connectedSortable"
   });
@@ -8,7 +8,7 @@ $(function() {
 
 /*
 
-UI module
+view module
 
   initialize the UI
     params: lists, connection class
