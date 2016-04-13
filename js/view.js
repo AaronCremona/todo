@@ -27,7 +27,26 @@ var v = (function() {
     markeSortable(config.sortableSelector, config.connectionSelector);
     };
 
+  /*
+    todo item view template
+  */
+  var todoItemTemplate = '<li class="list-group-item" id="%id%">%text%</li>';
+
+  /*
+    render todo item using todoItemTemplate
+      params
+        text - todo text
+        targetEl - selector of element to add todo
+        id - id to add to the todo item
+  */
+  
+  var renderTodoItem = function(text, targetEl, id) {
+    var todoEl = todoItemTemplate.replace(/%text%/, text).replace(/%id%/, id);
+    $( targetEl ).append(todoEl);
+  }
+
   return {
-    init: init
+    init: init,
+    renderTodoItem: renderTodoItem
   }
  })();

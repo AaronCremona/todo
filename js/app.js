@@ -1,7 +1,7 @@
 $(function() {
   v.init({
-    sortableSelector: "#today, #week",
-    connectionSelector: ".connectedSortable"
+    sortableSelector: '#today, #week',
+    connectionSelector: '.connectedSortable'
   });
 });
 
