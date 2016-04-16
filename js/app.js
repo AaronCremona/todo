@@ -1,8 +1,4 @@
 $(function() {
-  v.init({
-    listSelectors: '#today, #week',
-    connectionSelector: '.connectedSortable'
-  });
   c.init();
 });
 

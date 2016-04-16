@@ -10,9 +10,14 @@ var c = (function() {
     });
   }
 
-  // iterate through each list, e.g. This Week, Today
+
   var init = function() {
-    
+    v.init({
+      listSelectors: '#today, #week',
+      connectionSelector: '.connectedSortable'
+    });
+
+    // iterate through each list, e.g. This Week, Today
     m.lists.forEach(initList);
   }
 

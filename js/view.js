@@ -20,7 +20,7 @@ var v = (function() {
           connectionSelector: class selector for connecting lists
   */
   var init = function(config) {
-    markeSortable(config.sortableSelector, config.connectionSelector);
+    markeSortable(config.listSelectors, config.connectionSelector);
 
     $( '.inputTodo' ).html(inputTemplate);
     };
