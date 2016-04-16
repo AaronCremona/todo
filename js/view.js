@@ -38,9 +38,8 @@ var v = (function() {
         todoObj - todo object
   */
 
-  var renderTodoItem = function(targetEl, todoObj) {
+  var renderTodoItem = function(targetEl, todoObj, id) {
     var text = todoObj.text,
-      id = todoObj.id,
       newTodoItem = todoItemTemplate.replace(/%text%/, text).replace(/%id%/, id);
     $( targetEl ).append(newTodoItem);
   };

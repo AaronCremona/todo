@@ -5,7 +5,8 @@ var c = (function() {
   var initList = function(list) {
     var elId = list.id;
     list.items.forEach(function(todo){
-      v.renderTodoItem(elId, m.todos[todo]);
+      var id = todo;
+      v.renderTodoItem(elId, m.todos[todo], todo);
     });
   }
 
