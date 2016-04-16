@@ -44,10 +44,20 @@ var v = (function() {
     $( targetEl ).append(newTodoItem);
   };
 
+  /*
+    Delete todo item from view
+      params
+        targetId - id of the todo to delete
+  */
+
+  var deleteTodoItem = function(targetId) {
+    $( targetId ).remove();
+  };
 
 
   return {
     init: init,
-    renderTodoItem: renderTodoItem
+    renderTodoItem: renderTodoItem,
+    deleteTodoItem: deleteTodoItem
   }
  })();
