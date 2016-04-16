@@ -3,3 +3,7 @@
 .list-group {
   background-color: #2D3A3A;
 }
+
+.completed {
+  text-decoration: line-through;
+}

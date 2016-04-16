@@ -8,8 +8,6 @@ $(function() {
 todos -
 
 view module
-  - add checkbox - checked styles
-  - cross off checked item text
   - clear completed
 
 controller

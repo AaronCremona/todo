@@ -6,7 +6,7 @@ var v = (function() {
   */
 
   var markeSortable = function(listSelectors, connectionSelector)  {
-    $( listSelectors ).sortable({
+    $(listSelectors).sortable({
       connectWith: connectionSelector
       }).disableSelection();
   };
@@ -22,7 +22,7 @@ var v = (function() {
   var init = function(config) {
     markeSortable(config.listSelectors, config.connectionSelector);
 
-    $( '.inputTodo' ).html(inputTemplate);
+    $('.inputTodo').html(inputTemplate);
     };
 
 
@@ -50,7 +50,7 @@ var v = (function() {
   var renderTodoItem = function(targetEl, todoObj, id) {
     var text = todoObj.text,
       newTodoItem = todoItemTemplate.replace(/%text%/, text).replace(/%id%/, id);
-    $( targetEl ).append(newTodoItem);
+    $( targetEl ).append( newTodoItem );
   };
 
   /*
@@ -59,13 +59,32 @@ var v = (function() {
         targetId - id of the todo to delete
   */
   var deleteTodoItem = function(targetId) {
-    $( targetId ).remove();
+    $(targetId).remove();
   };
 
+  /*
+    Check item / uncheck item
+      params
+        targetId - id of the todo to delete
+  */
+  var complete = function(targetId, notComplete) {
+    var el = $(targetId);
+
+    if (notComplete) {
+      el.removeClass('completed');
+      el.children('.checkbox').removeClass('fa-check-circle-o').addClass('fa-circle-thin');
+    }
+    else {
+      el.addClass('completed');
+      el.children('.checkbox').removeClass('fa-circle-thin').addClass('fa-check-circle-o');
+    }
+  };
 
   return {
     init: init,
     renderTodoItem: renderTodoItem,
-    deleteTodoItem: deleteTodoItem
+    deleteTodoItem: deleteTodoItem,
+    complete: complete
+
   }
  })();
