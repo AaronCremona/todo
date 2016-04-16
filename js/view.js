@@ -1,5 +1,3 @@
-// refactor to object literal syntax and use object decorator pattern
-
 var v = (function() {
 
   /*
@@ -14,7 +12,7 @@ var v = (function() {
   };
 
   /*
-    init function - publically exposed
+    init function - public
 
       calls method to make the lists sortable
 
@@ -34,17 +32,20 @@ var v = (function() {
   var todoItemTemplate = '<li class="list-group-item" id="%id%">%text%</li>';
 
   /*
-    render todo item using todoItemTemplate
+    render individual todo item using todoItemTemplate
       params
-        text - todo text
-        targetEl - selector of element to add todo
-        id - id to add to the todo item
+        targetEl - id of the list container to add to the todo item
+        todoObj - todo object
   */
 
-  var renderTodoItem = function(targetEl, text, id) {
-    var todoEl = todoItemTemplate.replace(/%text%/, text).replace(/%id%/, id);
-    $( targetEl ).append(todoEl);
+  var renderTodoItem = function(targetEl, todoObj) {
+    var text = todoObj.text,
+      id = todoObj.id,
+      newTodoItem = todoItemTemplate.replace(/%text%/, text).replace(/%id%/, id);
+    $( targetEl ).append(newTodoItem);
   };
+
+
 
   return {
     init: init,
