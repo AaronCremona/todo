@@ -26,13 +26,18 @@ var v = (function() {
     };
 
 
-  var todoItemTemplate = '<li class="list-group-item" id="%id%">%text% \
-    <i class="fa fa-trash-o pull-right" aria-hidden="true"></i></li>';
+  var todoItemTemplate =  '<li class="list-group-item" id="%id%"> \
+                            <i class="fa fa-circle-thin checkbox" aria-hidden="true"></i> \
+                            %text% \
+                            <i class="fa fa-trash-o pull-right delete" aria-hidden="true"></i> \
+                            </li>';
 
   var inputTemplate =   '<div class="input-group"> \
                           <input type="text" class="form-control" placeholder="Add new todo..."> \
                             <span class="input-group-btn"> \
-                              <button class="btn btn-secondary" type="button">Go!</button> \
+                              <button class="btn btn-secondary" type="button"> \
+                                <i class="fa fa-plus" aria-hidden="true"></i> \
+                              </button> \
                             </span> \
                         </div>'
 
