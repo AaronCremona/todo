@@ -1,6 +1,6 @@
 $(function() {
   v.init({
-    sortableSelector: '#today, #week',
+    listSelectors: '#today, #week',
     connectionSelector: '.connectedSortable'
   });
   c.init();

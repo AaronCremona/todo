@@ -12,6 +12,7 @@ var c = (function() {
 
   // iterate through each list, e.g. This Week, Today
   var init = function() {
+    
     m.lists.forEach(initList);
   }
 

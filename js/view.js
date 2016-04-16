@@ -5,8 +5,8 @@ var v = (function() {
       - need to add drop on empty ok and placeholder style
   */
 
-  var markeSortable = function(sortableSelector, connectionSelector)  {
-    $( sortableSelector ).sortable({
+  var markeSortable = function(listSelectors, connectionSelector)  {
+    $( listSelectors ).sortable({
       connectWith: connectionSelector
       }).disableSelection();
   };
@@ -14,22 +14,27 @@ var v = (function() {
   /*
     init function - public
 
-      calls method to make the lists sortable
-
       params
         object with props:
           sortableSelector: jquery selector string of sortable lists
           connectionSelector: class selector for connecting lists
   */
-
   var init = function(config) {
     markeSortable(config.sortableSelector, config.connectionSelector);
+
+    $( '.inputTodo' ).html(inputTemplate);
     };
 
-  /*
-    todo item view template
-  */
-  var todoItemTemplate = '<li class="list-group-item" id="%id%">%text%</li>';
+
+  var todoItemTemplate = '<li class="list-group-item" id="%id%">%text% \
+    <i class="fa fa-trash-o pull-right" aria-hidden="true"></i></li>';
+
+  var inputTemplate =   '<div class="input-group"> \
+                          <input type="text" class="form-control" placeholder="Add new todo..."> \
+                            <span class="input-group-btn"> \
+                              <button class="btn btn-secondary" type="button">Go!</button> \
+                            </span> \
+                        </div>'
 
   /*
     render individual todo item using todoItemTemplate
@@ -37,7 +42,6 @@ var v = (function() {
         targetEl - id of the list container to add to the todo item
         todoObj - todo object
   */
-
   var renderTodoItem = function(targetEl, todoObj, id) {
     var text = todoObj.text,
       newTodoItem = todoItemTemplate.replace(/%text%/, text).replace(/%id%/, id);
@@ -49,7 +53,6 @@ var v = (function() {
       params
         targetId - id of the todo to delete
   */
-
   var deleteTodoItem = function(targetId) {
     $( targetId ).remove();
   };
