@@ -5,17 +5,19 @@ $(function() {
 
 /*
 
+todos -
+
 view module
+  - add checkbox - checked styles
+  - cross off checked item text
+  - clear completed
 
-  initialize the UI
-    params: lists, connection class
-    make lists sortable and connected
+controller
+  - add task method
+  - delete task method
+  - complete / uncomplete method
+  - click handler for add task button
+  - click handler for delete-task
+  - click handler for check uncheck
 
-  add an item
-
-  delete an item
-
-  cross an item off
-
-  clear completed
 */
