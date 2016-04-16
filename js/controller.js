@@ -2,14 +2,13 @@ var c = (function() {
 
   // Iterate through all child todos of a List and render
   // e.g. All todos in Today List
-  var initList = function(list) {
-    var elId = list.id;
-    list.items.forEach(function(todo){
-      var id = todo;
-      v.renderTodoItem(elId, m.todos[todo], todo);
+  var initList = function(elId, list) {
+    list.forEach(function(todo){
+      var id = todo,
+        text = m.todos[todo];
+      v.renderTodoItem(elId, text, id);
     });
-  }
-
+  };
 
   var init = function() {
     v.init({
@@ -18,8 +17,11 @@ var c = (function() {
     });
 
     // iterate through each list, e.g. This Week, Today
-    m.lists.forEach(initList);
-  }
+    for (var list in m.lists) {
+      console.log(list, m.lists[list]);
+      initList(list, m.lists[list]);
+    }
+  };
 
   return {
     init: init

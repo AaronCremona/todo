@@ -1,14 +1,8 @@
 var m = {
-  lists: [
-    {
-      id: "#today",
-      items: ['1', '2']
-    },
-    {
-      id: "#week",
-      items: ['3', '4']
-    }
-  ],
+  lists: {
+    "#today": ['1', '2'],
+    "#week": ['3', '4']
+  },
   todos: {
     '1': {
       text: 'Create clever sample to do\'s',
