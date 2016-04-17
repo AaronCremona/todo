@@ -1,14 +1,16 @@
 var c = (function() {
 
+  'use strict';
+
   // Iterate through all child todos of a List and render
   // e.g. All todos in Today List
   var initList = function(elId, list) {
     list.forEach(function(todoId){
       v.renderTodoItem(elId, m.todos[todoId], todoId);
     });
-  };
+  },
 
-  var init = function() {
+  init = function() {
     v.init({
       listSelectors: '#today, #week',
       connectionSelector: '.connectedSortable'
@@ -18,9 +20,9 @@ var c = (function() {
     for (var list in m.lists) {
       initList(list, m.lists[list]);
     }
-  };
+  },
 
-  var randomId = function() {
+  randomId = function() {
     var generateId = function() {
       return Math.floor(Math.random() * 1000);
     }
@@ -33,9 +35,9 @@ var c = (function() {
     }
 
     return id;
-  };
+  },
 
-  var addTask = function(targetEl, text) {
+  addTask = function(targetEl, text) {
     var id = randomId().toString();
 
     // add task to todos in model
@@ -49,9 +51,9 @@ var c = (function() {
 
     // render task in view
     v.renderTodoItem(targetEl, m.todos[id], id);
-  };
+  },
 
-  var destroyTask = function (el, id) {
+  destroyTask = function (el, id) {
     // delete task from list array
     var index = m.lists[el].indexOf(id);
     m.lists[el].splice(index, 1);
@@ -61,9 +63,9 @@ var c = (function() {
 
     // remove task from view
     v.deleteTodoItem('#' + id);
-  };
+  },
 
-  var completeTask = function (targetId, notcomplete) {
+  completeTask = function (targetId, notcomplete) {
     // update model to reflect complete or incomplete
     if (notcomplete) {
       m.todos[targetId].isComplete = false;
@@ -73,9 +75,7 @@ var c = (function() {
 
     // update view
     v.complete('#' + targetId, notcomplete);
-  }
-
-
+  };
 
   return {
     init: init,
