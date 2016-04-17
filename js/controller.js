@@ -63,11 +63,24 @@ var c = (function() {
     v.deleteTodoItem('#' + id);
   };
 
-  
+  var completeTask = function (targetId, notcomplete) {
+    // update model to reflect complete or incomplete
+    if (notcomplete) {
+      m.todos[targetId].isComplete = false;
+    } else {
+      m.todos[targetId].isComplete = true;
+    }
+
+    // update view
+    v.complete('#' + targetId, notcomplete);
+  }
+
+
 
   return {
     init: init,
     addTask: addTask,
-    destroyTask: destroyTask
+    destroyTask: destroyTask,
+    completeTask: completeTask
   }
  })();
