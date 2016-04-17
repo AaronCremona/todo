@@ -51,8 +51,23 @@ var c = (function() {
     v.renderTodoItem(targetEl, m.todos[id], id);
   };
 
+  var destroyTask = function (el, id) {
+    // delete task from list array
+    var index = m.lists[el].indexOf(id);
+    m.lists[el].splice(index, 1);
+
+    // delete task from todo object
+    delete m.todos[id];
+
+    // remove task from view
+    v.deleteTodoItem('#' + id);
+
+    console.log(m);
+  }
+
   return {
     init: init,
-    addTask: addTask
+    addTask: addTask,
+    destroyTask: destroyTask
   }
  })();

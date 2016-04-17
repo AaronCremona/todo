@@ -7,7 +7,7 @@ $(function() {
   c.addTask('#week', 'Buy milk');
   c.addTask('#week', 'Make plans to takeover the world');
   c.addTask('#week', 'File taxes');
-  
+
 });
 
 
@@ -19,7 +19,6 @@ view module
   - clear completed
 
 controller
-  - add task method
   - delete task method
   - complete / uncomplete method
   - click handler for add task button
