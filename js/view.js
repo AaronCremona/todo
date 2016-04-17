@@ -1,30 +1,6 @@
-var v = (function() {
+var v = (function () {
 
-  /*
-      makeSortable function - private
-      - need to add drop on empty ok and placeholder style
-  */
-
-  var markeSortable = function(listSelectors, connectionSelector)  {
-    $(listSelectors).sortable({
-      connectWith: connectionSelector
-      }).disableSelection();
-  };
-
-  /*
-    init function - public
-
-      params
-        object with props:
-          sortableSelector: jquery selector string of sortable lists
-          connectionSelector: class selector for connecting lists
-  */
-  var init = function(config) {
-    markeSortable(config.listSelectors, config.connectionSelector);
-
-    $('.inputTodo').html(inputTemplate);
-    };
-
+        'use strict';
 
   var todoItemTemplate =  '<li class="list-group-item" id="%id%"> \
                             <i class="fa fa-circle-thin checkbox" aria-hidden="true"></i> \
@@ -39,7 +15,33 @@ var v = (function() {
                                 <i class="fa fa-plus" aria-hidden="true"></i> \
                               </button> \
                             </span> \
-                        </div>'
+                        </div>';
+
+
+  /*
+      makeSortable function - private
+      - need to add drop on empty ok and placeholder style
+  */
+
+  var markeSortable = function (listSelectors, connectionSelector) {
+    $(listSelectors).sortable({
+      connectWith: connectionSelector
+      }).disableSelection();
+  };
+
+  /*
+    init function - public
+
+      params
+        object with props:
+          sortableSelector: jquery selector string of sortable lists
+          connectionSelector: class selector for connecting lists
+  */
+  var init = function (config) {
+    markeSortable(config.listSelectors, config.connectionSelector);
+
+    $('.inputTodo').html(inputTemplate);
+    };
 
   /*
     render individual todo item using todoItemTemplate
@@ -50,7 +52,7 @@ var v = (function() {
   var renderTodoItem = function(targetEl, todoObj, id) {
     var text = todoObj.text,
       newTodoItem = todoItemTemplate.replace(/%text%/, text).replace(/%id%/, id);
-    $( targetEl ).append( newTodoItem );
+    $(targetEl).append(newTodoItem);
   };
 
   /*
@@ -58,7 +60,7 @@ var v = (function() {
       params
         targetId - id of the todo to delete
   */
-  var deleteTodoItem = function(targetId) {
+  var deleteTodoItem = function (targetId) {
     $(targetId).remove();
   };
 
@@ -67,14 +69,13 @@ var v = (function() {
       params
         targetId - id of the todo to delete
   */
-  var complete = function(targetId, notComplete) {
+  var complete = function (targetId, notComplete) {
     var el = $(targetId);
 
     if (notComplete) {
       el.removeClass('completed');
       el.children('.checkbox').removeClass('fa-check-circle-o').addClass('fa-circle-thin');
-    }
-    else {
+    } else {
       el.addClass('completed');
       el.children('.checkbox').removeClass('fa-circle-thin').addClass('fa-check-circle-o');
     }

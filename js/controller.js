@@ -61,9 +61,9 @@ var c = (function() {
 
     // remove task from view
     v.deleteTodoItem('#' + id);
+  };
 
-    console.log(m);
-  }
+  
 
   return {
     init: init,

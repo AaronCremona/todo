@@ -19,7 +19,6 @@ view module
   - clear completed
 
 controller
-  - delete task method
   - complete / uncomplete method
   - click handler for add task button
   - click handler for delete-task
