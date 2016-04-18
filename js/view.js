@@ -27,6 +27,7 @@ var v = (function () {
     $(listSelectors).sortable({
       connectWith: connectionSelector,
       placeholder: 'placeholder',
+      stop: c.sortUpdateHandler
       }).disableSelection();
   },
 

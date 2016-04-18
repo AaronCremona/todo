@@ -60,6 +60,15 @@ var c = (function() {
     inputEl.val('');
   },
 
+  // update list arrays in model on sort
+  sortUpdateHandler = function() {
+    var todayIds = $('#today').sortable('toArray'),
+      weekIds = $('#week').sortable('toArray');
+
+    m.lists['#today'] = todayIds;
+    m.lists['#week'] = weekIds;
+  },
+
   randomId = function() {
     var generateId = function() {
       return Math.floor(Math.random() * 1000);
@@ -119,6 +128,7 @@ var c = (function() {
     init: init,
     addTask: addTask,
     destroyTask: destroyTask,
-    completeTask: completeTask
+    completeTask: completeTask,
+    sortUpdateHandler: sortUpdateHandler
   }
  })();
