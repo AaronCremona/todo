@@ -3,7 +3,8 @@ $(function () {
 
     c.init({
         listSelectors: '#today, #week',
-        connectionSelector: '.connectedSortable'
+        connectionSelector: '.connectedSortable',
+        inputIds: '#today-input .input-group-btn, #week-input .input-group-btn'
     });
 
     // populate some sample tasks

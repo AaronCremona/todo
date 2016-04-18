@@ -22,8 +22,8 @@ var c = (function() {
     }
 
     // click handlers
-    $('#today, #week').on('click', todoClickHandler);
-    $('')
+    $(settings.listSelectors).on('click', todoClickHandler);
+    $(settings.inputIds).on('click', inputClickHandler);
   },
 
   todoClickHandler = function(e) {
@@ -47,6 +47,17 @@ var c = (function() {
       }
 
       e.stopPropagation();
+  },
+
+  inputClickHandler = function(e) {
+    var targetEl = '#' + $(this).closest('form').attr('id'),
+      inputEl = $(this).siblings('input'),
+      text = inputEl.val();
+
+    targetEl = targetEl.replace(/-input/, '');
+
+    addTask(targetEl, text);
+    inputEl.val('');
   },
 
   randomId = function() {
