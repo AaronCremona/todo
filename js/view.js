@@ -25,7 +25,8 @@ var v = (function () {
 
   markeSortable = function (listSelectors, connectionSelector) {
     $(listSelectors).sortable({
-      connectWith: connectionSelector
+      connectWith: connectionSelector,
+      placeholder: 'placeholder',
       }).disableSelection();
   },
 

@@ -25,8 +25,6 @@ view module
   - clear completed
 
 controller
-  - click handler for add task button
-  - click handler for delete-task
-  - click handler for check uncheck
+
 
 */

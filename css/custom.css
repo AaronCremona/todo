@@ -7,3 +7,13 @@
 .completed {
   text-decoration: line-through;
 }
+
+.placeholder {
+  background-color:  #2D3A3A;
+  border: 1px solid #ddd;
+  height: 5rem;
+}
+
+ul {
+  min-height: 5rem;
+}
