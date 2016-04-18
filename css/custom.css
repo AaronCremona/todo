@@ -1,4 +1,7 @@
 /*colors: https://coolors.co/app/040f0f-248232-2ba84a-2d3a3a-fcfffc*/
+body {
+  min-height: 100vh;
+}
 
 footer {
   width: 100%;
@@ -7,10 +10,6 @@ footer {
 
 footer p {
   padding-top: 2rem;
-}
-
-body {
-  min-height: 100vh;
 }
 
 .list-group {
@@ -36,7 +35,7 @@ ul {
 }
 
 .inputTodo {
-  padding-bottom: 2rem;
+  padding: 2rem 0;
 }
 
 .jumbotron, footer {
@@ -45,6 +44,13 @@ ul {
 
 .delete {
   padding-top: 1rem;
+  color: #fff;
+  -webkit-transition: color .8s;
+  transition: color .8s;
+}
+
+li:hover .delete {
+  color: red;
 }
 
 .list-group-item {
