@@ -13,7 +13,7 @@ var c = (function() {
   init = function(settings) {
     v.init({
       listSelectors: settings.listSelectors,
-      connectionSelector: settings.sortableSelector
+      connectionSelector: settings.connectionSelector
     });
 
     // iterate through each list, e.g. This Week, Today
