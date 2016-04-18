@@ -20,6 +20,32 @@ var c = (function() {
     for (var list in m.lists) {
       initList(list, m.lists[list]);
     }
+
+    // click handlers
+    $('#today, #week').on('click', todoClickHandler);
+  },
+
+  todoClickHandler = function(e) {
+      var parentEl = '#' + e.currentTarget.id,
+        button = e.target.classList[0],
+        id = e.target.parentElement.id;
+
+        console.log(parentEl, button, id);
+
+      switch(button) {
+        case 'delete':
+          destroyTask(parentEl, id);
+          break;
+        case 'checkbox':
+          if (e.target.parentElement.className.indexOf('completed') === -1) {
+            completeTask(id);
+          } else {
+            completeTask(id, 'uncomplete it');
+          }
+          break;
+      }
+
+      e.stopPropagation();
   },
 
   randomId = function() {

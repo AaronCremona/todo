@@ -3,9 +3,9 @@ var v = (function () {
         'use strict';
 
   var todoItemTemplate =  '<li class="list-group-item" id="%id%"> \
-                            <i class="fa fa-circle-thin checkbox" aria-hidden="true"></i> \
+                            <i class="checkbox fa fa-circle-thin" aria-hidden="true"></i> \
                             %text% \
-                            <i class="fa fa-trash-o pull-right delete" aria-hidden="true"></i> \
+                            <i class="delete fa fa-trash-o pull-right" aria-hidden="true"></i> \
                             </li>',
 
   inputTemplate =   '<div class="input-group"> \
@@ -86,6 +86,5 @@ var v = (function () {
     renderTodoItem: renderTodoItem,
     deleteTodoItem: deleteTodoItem,
     complete: complete
-
-  }
+  };
  })();
