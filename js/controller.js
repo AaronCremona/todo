@@ -10,10 +10,10 @@ var c = (function() {
     });
   },
 
-  init = function() {
+  init = function(settings) {
     v.init({
-      listSelectors: '#today, #week',
-      connectionSelector: '.connectedSortable'
+      listSelectors: settings.listSelectors,
+      connectionSelector: settings.sortableSelector
     });
 
     // iterate through each list, e.g. This Week, Today
@@ -23,6 +23,7 @@ var c = (function() {
 
     // click handlers
     $('#today, #week').on('click', todoClickHandler);
+    $('')
   },
 
   todoClickHandler = function(e) {

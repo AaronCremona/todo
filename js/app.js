@@ -1,7 +1,10 @@
 $(function () {
     'use strict';
 
-    c.init();
+    c.init({
+        listSelectors: '#today, #week',
+        connectionSelector: '.connectedSortable'
+    });
 
     // populate some sample tasks
     c.addTask('#today', 'Create clever sample to do\'s');
