@@ -24,6 +24,15 @@ var c = (function() {
     // click handlers
     $(settings.listSelectors).on('click', todoClickHandler);
     $(settings.inputIds).on('click', inputClickHandler);
+
+    // prevent enter keypress in form from resettign page and call normal add task handlers
+    $('input').keypress(function(e) {
+
+    if (e.which === 13) {
+        console.log(e);
+        e.preventDefault();
+      }
+  });
   },
 
   todoClickHandler = function(e) {
