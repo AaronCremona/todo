@@ -3,9 +3,26 @@ body {
   min-height: 100vh;
 }
 
+.jumbotron {
+  min-height: 20vh;
+
+}
+
+.jumbotron, header, footer, body {
+  background-color: #2BA84A;
+  padding: 0;
+  margin: 0;
+}
+
+main, .container-fluid {
+  background-color: #e3e3e3;
+  width: 100%;
+  min-height: 70vh;
+}
+
 footer {
   width: 100%;
-  height: 10%;
+  min-height: 5vh;
 }
 
 footer p {
@@ -13,7 +30,7 @@ footer p {
 }
 
 .list-group {
-  background-color: #2D3A3A;
+  background-color: #e3e3e3;
 }
 
 .completed {
@@ -38,13 +55,21 @@ ul {
   padding: 2rem 0;
 }
 
-.jumbotron, footer {
-  background-color: #2BA84A;
+.inputTodo input {
+  background-color: #e3e3e3;
+}
+
+.inputTodo button {
+  background-color: #e3e3e3;
+}
+
+.inputTodo button:hover {
+  background-color: blue;
 }
 
 .delete {
   padding-top: 1rem;
-  color: #fff;
+  color: #e3e3e3;
   -webkit-transition: color .8s;
   transition: color .8s;
 }
@@ -55,12 +80,14 @@ li:hover .delete {
 
 .list-group-item {
   font-size: 2rem;
+  background-color: #e3e3e3;
 }
 
 .well {
   background-color: #040F0F;
-  margin: 2rem;
   border-radius: 4px;
+  border: 15px solid #e3e3e3;
+  margin-top: 20px;
 }
 
 h2 {
