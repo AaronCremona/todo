@@ -1,4 +1,5 @@
 /*jslint indent: 2 */
+/*global $, c, m */
 
 var v = (function () {
 
