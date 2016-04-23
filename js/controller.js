@@ -8,9 +8,7 @@ var c = (function () {
 
   // Iterate through all child todos of a List and render
   // e.g. All todos in Today List
-  var list,
-
-    initList = function (elId, list) {
+  var initList = function (elId, list) {
       list.forEach(function (todoId) {
         v.renderTodoItem(elId, m.todos[todoId], todoId);
       });
@@ -22,7 +20,8 @@ var c = (function () {
         connectionSelector: settings.connectionSelector
       });
 
-      // iterate through each list, e.g. This Week, Today
+      // iterate through each list, e.g. This Week, Today and render todos
+      var list;
       for (list in m.lists) {
         initList(list, m.lists[list]);
       }
@@ -31,11 +30,11 @@ var c = (function () {
       $(settings.listSelectors).on('click', todoClickHandler);
       $(settings.inputIds).on('click', inputClickHandler);
 
-      // prevent enter keypress in form from resettign page and call normal add task handlers
+      // prevent enter keypress in form from resetting page and call normal add task handlers
       $('input').keypress(function (e) {
-
         if (e.which === 13) {
           e.preventDefault();
+          inputClickHandler.bind($(this), $(this))();
         }
       });
     },
@@ -61,10 +60,15 @@ var c = (function () {
       e.stopPropagation();
     },
 
-    inputClickHandler = function () {
+    inputClickHandler = function (inputEl) {
       var targetEl = '#' + $(this).closest('form').attr('id'),
-        inputEl = $(this).siblings('input'),
-        text = inputEl.val();
+        text;
+
+      if(inputEl.currentTarget) {
+        inputEl = $(this).siblings('input');
+      }
+
+      text = inputEl.val();
 
       targetEl = targetEl.replace(/-input/, '');
 
@@ -143,4 +147,4 @@ var c = (function () {
     completeTask: completeTask,
     sortUpdateHandler: sortUpdateHandler
   };
- }());
+}());
